@@ -12,11 +12,21 @@
        let result = false;
        let lenght1 = str1.length;
        let lenght2 = str2.length;
-       for (let i = 0; i < lenght2 - lenght1 + 1; i++){
-           let str3 = str2.slice(i,i + lenght1);
-           if (str1 == str3) {
-               result = true;
-               break;
+       if (lenght2 > lenght1) {
+           for (let i = 0; i < lenght2 - lenght1 + 1; i++) {
+               let str3 = str2.slice(i, i + lenght1);
+               if (str1 == str3) {
+                   result = true;
+                   break;
+               }
+           }
+       }else {
+           for (let i = 0; i < lenght1 - lenght2 + 1; i++) {
+               let str3 = str1.slice(i, i + lenght2);
+               if (str2 == str3) {
+                   result = true;
+                   break;
+               }
            }
        }
        return result;
